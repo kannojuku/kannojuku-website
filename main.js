@@ -72,7 +72,7 @@ $('.slideshow').scroll(function(){
   } else if ((ww/3*5) < s && s < (ww/3*7)) {
     $('.sbd3').addClass('now-dot');
     $('*:not(.sbd3)').removeClass('now-dot');
-  } else if ((ww/3*8) < (s + 10)){
+  } else if ((ww/3*8) < (s + 50)){
     $('.sbd4').addClass('now-dot');
     $('*:not(.sbd4)').removeClass('now-dot');
   } else {
