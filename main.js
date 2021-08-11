@@ -9,7 +9,7 @@ $('.slideshow').scroll(function() {
   const s = $(this).scrollLeft();
   if (s == 0) {
     $('.sbl').addClass('hidden');
-  } else if (ww3 <= (s+10)) {
+  } else if (ww3 <= (s+50)) {
     $('.sbr').addClass('hidden');
   } else {
     $('.sbr, .sbl').removeClass('hidden')
