@@ -9,7 +9,7 @@ $('.slideshow').scroll(function() {
   const s = $(this).scrollLeft();
   if (s == 0) {
     $('.sbl').addClass('hidden');
-  } else if (ww3 <= s) {
+  } else if (ww3 <= (s+10)) {
     $('.sbr').addClass('hidden');
   } else {
     $('.sbr, .sbl').removeClass('hidden')
@@ -54,7 +54,7 @@ $(function(){
     if (s < ww3){
       $('.scroll-auto').removeClass('scroll-snap-x');
       $('.scroll-auto').animate({scrollLeft: s_after},600,'swing',function(){$('.scroll-auto').addClass('scroll-snap-x')});
-    } else if (s >= ww3){
+    } else if ((s+10) >= ww3){
       $('.scroll-auto').removeClass('scroll-snap-x');
       $('.scroll-auto').animate({scrollLeft: 0 },800,'swing',function(){$('.scroll-auto').addClass('scroll-snap-x')});
     };
@@ -72,7 +72,7 @@ $('.slideshow').scroll(function(){
   } else if ((ww/3*5) < s && s < (ww/3*7)) {
     $('.sbd3').addClass('now-dot');
     $('*:not(.sbd3)').removeClass('now-dot');
-  } else if ((ww/3*8) < s && s < (ww/3*10)) {
+  } else if ((ww/3*8) < (s + 10)){
     $('.sbd4').addClass('now-dot');
     $('*:not(.sbd4)').removeClass('now-dot');
   } else {
