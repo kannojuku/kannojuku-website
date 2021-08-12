@@ -5,11 +5,11 @@
   --kanno-accent-color: #57B4CC
 }
 @font-face {
-  font-family: 'NotoSerifCJKjp-Regular';
+  font-family: 'NotoSerifR';
   src: url(../font/NotoSerifCJKjp-Regular.otf);
 }
 @font-face {
-  font-family: 'NotoSansCJKjp-Regular';
+  font-family: 'NotoSansR';
   src: url(../font/NotoSansCJKjp-Regular.otf);
 }
 @font-face {
@@ -17,7 +17,7 @@
   src: url(../font/GenJyuuGothicX-Normal.ttf);
 }
 *{
-  font-family: NotoSansCJKjp-Regular;
+  font-family: NotoSansR;
 }
 body {
   min-height: 100vh;
@@ -34,13 +34,15 @@ header {
   right: 0;
   height: 110px;
   width: 100%;
-  background-color: #fff;
+  background-color: var(--kanno-bg-color);
+  z-index: 10;
 }
 .header-inner {
   width: 100%;
   height: 100%;
   display: flex;
-  background-color: var(--kanno-bg-color);
+  position: relative;
+  z-index: 10;
 }
 .header-logo-container {
   flex-basis: calc(100% - 110px);
@@ -48,7 +50,6 @@ header {
 }
 .header-logo {
   height: 110px;
-  mix-blend-mode: darken;
 }
 .header-menu {
   flex-basis: 110px;
@@ -59,6 +60,8 @@ header {
 .header-btn-menu {
   height: 70px;
   width: 70px;
+  position: relative;
+  z-index: 10;
 }
 .header-btn-menu > span {
   display: block;
@@ -66,7 +69,6 @@ header {
   margin: 0 auto;
   height: 3px;
   position: absolute;
-  z-index: 40;
   background-color: #000;
   border-radius: 3px;
   right: 27px;
@@ -94,40 +96,18 @@ header {
 menu {
   position: fixed;
   top: 0;
-  width: 100vw;
-  padding: 0;
-  margin: 0;
-  z-index: 3;
-  display: flex;
-  justify-content: flex-end;
-  pointer-events: none;
-}
-.menu-container {
+  right: 0;
+  z-index: 8;
+  background-color: var(--kanno-main-color);
+  height:100vh;
   width: 0;
   transition: .2s;
-  height: auto;
-  min-height: 100vh;
-  overflow: hidden;
-  background-color: var(--kanno-main-color);
+  max-width: calc(100vw - 270px);
+  margin: 0;
+  padding: 0;
 }
 .menu-open {
-  width: 100vw;
-  pointer-events: auto;
-}
-.menu-list li {
-  list-style: none;
-  margin: 0;
-}
-.menu-list li div{
-  height: 40px;
-  border-bottom: solid 1px #575866;
-  padding-left: 20px;
-  line-height: 40px;
-}
-.menu-list {
-  height:100%;
-  padding: 0;
-  margin: 0;
+  width: 65vw;
 }
 .bdfb {
   backdrop-filter: blur(10px);
@@ -135,7 +115,7 @@ menu {
 main {
   width: 100%;
   height: auto;
-  margin-top: 60px;
+  margin-top: 110px;
 }
 .slideshow-image-container {
   flex: none;
@@ -252,14 +232,14 @@ main {
 .catchphrase p:not(:last-child) {
   display: inline-block;
   font-size: 2.8rem;
-  font-family: NotoSerifCJKjp-Regular;
+  font-family: NotoSerifR;
   letter-spacing: .1em;
   color: var(--kanno-text-color);
   margin: 0;
 }
 .catchphrase p:last-child{
   font-size: 1.2rem;
-  font-family: NotoSansCJKjp-Regular;
+  font-family: NotoSansR;
   letter-spacing: .1em;
   color: var(--kanno-text-color);
 }
@@ -282,7 +262,7 @@ main {
 }
 .invite-button span {
   font-size: 1rem;
-  font-family: NotoSansCJKjp-Regular;
+  font-family: NotoSansR;
   letter-spacing: .1em;
 }
 .invite-button::after {
