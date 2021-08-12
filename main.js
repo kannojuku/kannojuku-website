@@ -1,6 +1,6 @@
 $('.header-btn-menu').on('click', function() {
   $('.header-btn-menu').toggleClass('menu-btn-open');
-  $('.menu-container').toggleClass('menu-open');
+  $('menu').toggleClass('menu-open');
   $('.header-inner').toggleClass('header-noshadow')
 });
 $('.slideshow').scroll(function() {
@@ -9,7 +9,7 @@ $('.slideshow').scroll(function() {
   const s = $(this).scrollLeft();
   if (s == 0) {
     $('.sbl').addClass('hidden');
-  } else if (ww3 <= (s+50)) {
+  } else if (ww3 <= (s+10)) {
     $('.sbr').addClass('hidden');
   } else {
     $('.sbr, .sbl').removeClass('hidden')
@@ -72,7 +72,7 @@ $('.slideshow').scroll(function(){
   } else if ((ww/3*5) < s && s < (ww/3*7)) {
     $('.sbd3').addClass('now-dot');
     $('*:not(.sbd3)').removeClass('now-dot');
-  } else if ((ww/3*8) < (s + 50)){
+  } else if ((ww/3*8) < (s + 10)){
     $('.sbd4').addClass('now-dot');
     $('*:not(.sbd4)').removeClass('now-dot');
   } else {
