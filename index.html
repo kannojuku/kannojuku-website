@@ -1,147 +1,519 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="Cache-Control" content="no-cache">
-  <meta name=”robots” content=”noindex,nofollow” />
-  <title>菅野塾</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="normalize.css">
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-</head>
-<body>
-  <header class="header">
-    <div class="header-inner">
-      <div class="header-logo-container">
-        <img src="../image/logo.png" class="header-logo">
-      </div>
-      <div class="header-menu">
-        <div class="header-btn-menu">
-          <span class="menu_bar1"></span>
-          <span class="menu_bar2"></span>
-          <span class="menu_bar3"></span>
-        </div>
-      </div>
-    </div>
-    <menu>
-      <div class="menu-container">
-        <ul class="menu-list">
-          <li><div class="menu-item">トップページ</div></li>
-          <li><div class="menu-item">菅野塾とは</div></li>
-          <li><div class="menu-item">講師紹介</div></li>
-          <li><div class="menu-item">活動場所</div></li>
-          <li><div class="menu-item">お問い合わせ</div></li>
-          <li><div class="menu-item">このサイトについて</div></li>
-        </ul>
-      </div>
-    </menu>
-    <div class="menu-back-blur"></div>
-  </header>
-  <main>
-    <div>
-      <ul class="slideshow scroll-auto scroll-snap-x">
-        <li class="slideshow-image-container">
-          <div class="slideshow-image1"></div>
-        </li>
-        <li class="slideshow-image-container">
-          <div class="slideshow-image2"></div>
-        </li>
-        <li class="slideshow-image-container">
-          <div class="slideshow-image3"></div>
-        </li>
-        <li class="slideshow-image-container">
-          <div class="slideshow-image4"></div>
-        </li>
-      </ul>
-      <div class="scroll-nav">
-        <div class="scroll-button-container sbcl">
-          <button class="scroll-button sbl hidden bdfb">
-            <span class="sb-bar1"></span>
-            <span class="sb-bar2"></span>
-          </button>
-        </div>
-        <div class="scroll-button-container sbcr">
-          <button class="scroll-button sbr bdfb">
-            <span class="sb-bar3"></span>
-            <span class="sb-bar4"></span>
-          </button>
-        </div>
-      </div>
-      <div class="scroll-bar-container">
-        <div class="scroll-bar">
-          <span class="sb-dot sbd1 now-dot"></span>
-          <span class="sb-dot sbd2"></span>
-          <span class="sb-dot sbd3"></span>
-          <span class="sb-dot sbd4"></span>
-        </div>
-      </div>
-    </div>
-    <div class="section1">
-      <div class="catchphrase">
-        <p>鳥小屋から、</p><p>世界へ。</p>
-        <p>国内有数の最先端教育</p>
-      </div>
-      <button class="invite-button">
-        <span>入塾申し込み</span><div class="iba"></div>
-      </button>
-    </div>
-    <div class="section2">
-        <ul class="news-list">
-          <li class="news-item">
-            <div class="news-item-inner">
-              <div class="news-category">
-                <span>お知らせ</span>
-              </div>
-              <div class="news-text">
-                <span class="news-date">2021.8.32</span>
-                <span class="news">菅野塾のウェブサイトが正式リリースされました。</span>
-              </div>
-            </div>
-          </li>
-          <li class="news-item">
-            <div class="news-item-inner">
-              <div class="news-category">
-                <span>お知らせ</span>
-              </div>
-              <div class="news-text">
-                <span class="news-date">2004.12.20</span>
-                <span class="news">祗園精舎の鐘の声、
-                諸行無常の響きあり。
-                娑羅双樹の花の色、
-                盛者必衰の理をあらはす。</span>
-              </div>
-            </div>
-          </li>
-          <li class="news-item">
-            <div class="news-item-inner">
-              <div class="news-category">
-                <span>うんち</span>
-              </div>
-              <div class="news-text">
-                <span class="news-date">1900.1.1</span>
-                <span class="news">おごれる人も久しからず、
-                唯春の夜の夢のごとし。
-                たけき者も遂にはほろびぬ、
-                偏に風の前の塵に同じ。</span>
-              </div>
-            </div>
-          </li>
-        </ul>
-        <div class="news-more">
-          <div class="news-more-button">
-            <span>MORE</span>
-            <div class="more-button">
-              <div class="nmb"></div>
-            </div>
-          </div>
-        </div>
-    </div>
-    <div class="corona">
-      <button class="corona-button">
-        <span>弊塾における新型コロナウイルス感染症対策について</span><div class="cba"></div>
-      </button>
-    </div>
-  </main>
-  <script src="main.js"></script>
-</body>
-</html>
+:root {
+  --kanno-bg-color: #EDEEF3;
+  --kanno-text-color: #383A53;
+  --kanno-main-color: #275CA6;
+  --kanno-accent-color: #57B4CC
+}
+@font-face {
+  font-family: 'NotoSerifR';
+  src: url(../font/NotoSerifCJKjp-Regular.otf);
+}
+@font-face {
+  font-family: 'NotoSansR';
+  src: url(../font/NotoSansCJKjp-Regular.otf);
+}
+@font-face {
+  font-family: '源柔ゴシック';
+  src: url(../font/GenJyuuGothicX-Normal.ttf);
+}
+*{
+  font-family: NotoSansR;
+}
+body {
+  min-height: 100vh;
+  background-color: #fff;
+  max-width: 100vw;
+  padding-top: 110px;
+}
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 110px;
+  width: 100%;
+  background-color: var(--kanno-bg-color);
+  z-index: 10;
+}
+.header-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 0 10px #545454;
+  transition: .4s;
+}
+.header-open-menu {
+  box-shadow: none;
+}
+.header-logo-container {
+  flex-basis: calc(100% - 110px);
+  padding-left: 20px;
+}
+.header-logo {
+  height: 110px;
+  transition: .4s;
+}
+.header-open-menu .header-logo {
+  filter: blur(10px);
+}
+.header-menu {
+  flex-basis: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-btn-menu {
+  height: 70px;
+  width: 70px;
+  position: relative;
+  z-index: 10;
+}
+.header-btn-menu > span {
+  display: block;
+  width: 56px;
+  margin: 0 auto;
+  height: 3px;
+  position: absolute;
+  background-color: #000;
+  border-radius: 3px;
+  right: 27px;
+  top: calc((100% - 4px)/2);
+  transition: .4s;
+}
+.menu-btn-open span {
+  background-color: #fff;
+}
+.menu-btn-open .menu_bar1 {
+  transform: rotate(45deg);
+}
+.menu-btn-open .menu_bar2 {
+  opacity: 0;
+}
+.menu-btn-open .menu_bar3{
+  transform: rotate(-45deg);  
+}
+.menu_bar1 {
+  transform: translateY(-12px);
+}
+.menu_bar3 {
+  transform: translateY(12px);
+}
+.menu-container:not(.menu-open){
+  height: 0;
+}
+menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 8;
+  background-color: var(--kanno-main-color);
+  height:100vh;
+  width: 0;
+  transition: .3s;
+  max-width: calc(100vw - 270px);
+  margin: 0;
+  padding: 110px 0 0;
+  overflow: hidden;
+}
+.menu-open {
+  width: 65vw;
+}
+.menu-list {
+  width: 100%;
+  margin: 30px auto;
+  list-style: none;
+  padding: 0;
+  opacity: 0;
+  transition: .5s;
+}
+.menu-list li::after {
+  content:"";
+  display: inline-block;
+  position: relative;
+  right: 15px;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  border-right: solid 4px #fff;
+  border-top: solid 4px #fff;
+}
+.menu-open .menu-list {
+  opacity: 1;
+}
+.menu-item {
+  display: inline-block;
+  list-style: none;
+  color: #fff;
+  font-size: 1.4rem;
+  margin: 40px 0 0 8vw;
+  font-weight: 900;
+  border-bottom: solid 2px #fff;
+  padding: 0 20px 10px 0;
+  line-height: 45px;
+  width: calc(100% - (16vw + 10px));
+}
+.menu-back-blur {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 7;
+  transition: .4s;
+  pointer-events: none;
+}
+.menu-open + .menu-back-blur {
+  backdrop-filter: blur(10px);
+  pointer-events: auto;
+}
+.bdfb {
+  backdrop-filter: blur(10px);
+}
+main {
+  width: 100%;
+  height: auto;
+}
+.slideshow-image-container {
+  flex: none;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  list-style: none;
+  width: 100vw;
+  height: 100%;
+  margin: 0;
+}
+.slideshow {
+  background-color: #dddd;
+  width: 100% !important;
+  height: calc(100vw / 16 * 9);
+  padding: 0;
+  overflow-x: scroll;
+  overflow-y: visible;
+  display: flex;
+  margin: 0;
+}
+.scroll-snap-x {
+  scroll-snap-type: x mandatory;
+}
+.slideshow-image1 {
+  background-image: url(../image/a1.jpg);
+}
+.slideshow-image2 {
+  background-image: url(../image/a2.jpg);
+}
+.slideshow-image3 {
+  background-image: url(../image/a3.jpg);
+}
+.slideshow-image4 {
+  background-image: url(../image/a4.jpg)
+}
+.slideshow-image-container > div {
+  height: 100%;
+  width:100%;
+  background-size: cover;
+}
+.scroll-nav {
+  height: calc(100vw / 16 * 9);
+  margin-top: calc(-100vw / 16 * 9);
+  width: 100%;
+  position: absolute;
+  display: flex;
+  pointer-events: none;
+  z-index: 1;
+}
+.scroll-button-container {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+.sbcl {
+  justify-content: flex-start;
+}
+.sbcr {
+  justify-content: flex-end;
+}
+.sbl {
+  border-radius: 0 3px 3px 0;
+}
+.sbr {
+  border-radius: 3px 0 0 3px;
+}
+.scroll-button {
+  height: 70px;
+  width: 40px;
+  transition: width .2s;
+  pointer-events: auto;
+}
+.hidden {
+  width: 0 !important;
+  padding: 0 !important;
+}
+.scroll-button {
+  background-color: #1F213436;
+  border: 0;
+  overflow: hidden;
+}
+.scroll-button span {
+  display: block;
+  width: 14px;
+  margin: auto;
+  height: 1px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: .2s;
+}
+.sb-bar1 {
+  transform: rotate(-45deg) translate(3px,-3px);
+}
+.sb-bar2 {
+  transform: rotate(45deg) translate(3px,3px);
+}
+.sb-bar3 {
+  transform: rotate(45deg) translate(-3px,-3px);
+}
+.sb-bar4 {
+  transform: rotate(-45deg) translate(-3px,3px);
+}
+.catchphrase {
+  height: auto;
+  margin: 0;
+  padding: 30px 0 0 0;
+  width: 85vw;
+}
+.catchphrase p {
+  display: block;
+}
+.catchphrase p:not(:last-child) {
+  display: inline-block;
+  font-size: 4.2rem;
+  font-family: "NotoSerifR", serif;
+  letter-spacing: .15em;
+  color: var(--kanno-text-color);
+  margin: 0;
+}
+.catchphrase p:last-child{
+  font-size: 2.0rem;
+  font-family: "NotoSansR", sans-serif;
+  letter-spacing: .1em;
+  color: var(--kanno-text-color);
+}
+.section1 {
+  padding: 0 4vw 20px;
+  background-color: var(--kanno-bg-color);
+}
+.invite-button {
+  display: block;
+  background-color: var(--kanno-main-color);
+  width: 92vw;
+  height: 80px;
+  margin: 30px 0 10px;
+  border: 0;
+  color: #fff;
+  text-align: left;
+  padding: 0 30px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.invite-button span {
+  font-size: 1.5rem;
+  font-family: "NotoSansR", sans-serif;
+  letter-spacing: .1em;
+}
+.invite-button::after {
+  content: "";
+  position: absolute;
+  right: calc(4vw + 20px);
+  width: 12px;
+  height: 12px;
+  background-color: #0000;
+  border-top: solid 2px #fff;
+  border-right: solid 2px #fff;
+  transform: rotate(45deg) translate(-10px, 15px);
+}
+.iba {
+  display: inline-block;
+  position: relative;
+  width: 5px;
+  height: 5px;
+  border: solid 1px #fff;
+  transform: rotate(45deg) scale(150) translate(-4px,6px);
+}
+@keyframes iba {
+  0% {
+    transform: rotate(45deg) scale(150) translate(-4px,6px);
+  }
+  100% {
+    transform: rotate(45deg) scale(300) translate(1px,1px);
+  }
+}
+.sb-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background-color: #9597B0;
+  transition: .2s;
+}
+.scroll-bar-container {
+  padding-top: 15px;
+  height: 15px;
+  width: 100vw;
+  background-color: var(--kanno-bg-color);
+}
+.scroll-bar {
+  width: 75px;
+  height: 100%;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+}
+.now-dot {
+  transform: scale(1.2);
+  background-color: #5F6070;
+}
+.corona {
+  height: 120px;
+  padding: 20px 4vw;
+}
+.corona-button {
+  background-color: var(--kanno-bg-color);
+  border: 0;
+  height: 80px;
+  width: 92vw;
+  padding: 0 30px;
+  text-align: left;
+  overflow: hidden;
+  position: relative;
+  border-radius: 3px;
+}
+.corona-button span {
+  font-size: 1.5rem;
+  font-family: "NotoSansR", sans-serif;
+  letter-spacing: .1em;
+}
+.cba {
+  display: inline-block;
+  position: absolute;
+  right: calc(4vw + 20px);
+  width: 12px;
+  height: 12px;
+  background-color: #0000;
+  border-top: solid 2px var(--kanno-main-color);
+  border-right: solid 2px var(--kanno-main-color);
+  transform: rotate(45deg) translate(20px,-15px);
+}
+@keyframes cba {
+  0% {
+    transform: rotate(45deg) translate(20px,-15px);
+  }
+  70% {
+    transform: rotate(45deg) translateX(5px);
+  }
+  100% {
+    transform: rotate(45deg) translate(50px,-45px);
+  }
+}
+.news-list {
+  width: 92vw;
+  margin: 60px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+  gap: 35px;
+}
+.news-item {
+  list-style: none;
+  width: 100%;
+}
+.news-item-inner {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 30px;
+  overflow: visible;
+}
+.news-category {
+  flex-basis: 200px;
+  max-width: 25%;
+}
+.news-text {
+  flex-basis: calc(100% - 230px);
+  min-width: calc(75% - 30px);
+}
+.news-category span {
+  display: block;
+  width: 100%;
+  height: 45px;
+  max-height: 3vh;
+  border-radius: 45px;
+  background-color: var(--kanno-accent-color);
+  font-size: 1.5rem;
+  line-height: 45px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-family: "NotoSansR", sans-serif;
+  letter-spacing: .1rem
+}
+.news-date {
+  display: block;
+  line-height: 45px;
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: var(--kanno-text-color);
+  font-family: "NotoSansR", sans-serif;
+}
+.news {
+  color: var(--kanno-text-color);
+  line-height: 2.2rem;
+  font-size: 1.9rem;
+  font-family: "源柔ゴシック", sans-serif;
+}
+.news-more {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.news-more-button {
+  height: 100%;
+  width: 120px;
+}
+.news-more-button span {
+  display: block;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  text-align: center;
+  color: var(--kanno-text-color);
+  font-family: "源柔ゴシック", sans-serif;
+  letter-spacing: .2rem;
+}
+.more-button {
+  height: 40px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nmb {
+  width: 30px;
+  height: 30px;
+  transform: rotate(45deg);
+  transition: 5s;
+  border-bottom: solid 2px var(--kanno-text-color);
+  border-right: solid 2px var(--kanno-text-color);
+}
+.nmba {
+  opacity: 0;
+  transition: 2s;
+}
