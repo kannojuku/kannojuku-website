@@ -1,7 +1,7 @@
 $('.header-btn-menu').on('click', function() {
   $('.header-btn-menu').toggleClass('menu-btn-open');
   $('menu').toggleClass('menu-open');
-  $('.header-inner').toggleClass('header-noshadow')
+  $('.header-inner').toggleClass('header-open-menu')
 });
 $('.slideshow').scroll(function() {
   const ww = $(window).width();
