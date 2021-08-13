@@ -91,3 +91,4 @@ $('.more-button').on('click',function(){
     'background-color':'var(--kanno-main-color)',
     'transition':'2s'});
 });
+history.pushState(null, null, null);
