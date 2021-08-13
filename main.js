@@ -3,6 +3,11 @@ $('.header-btn-menu').on('click', function() {
   $('menu').toggleClass('menu-open');
   $('.header-inner').toggleClass('header-open-menu')
 });
+$('.menu-back-blur').on('click', function() {
+  $('.header-btn-menu').toggleClass('menu-btn-open');
+  $('menu').toggleClass('menu-open');
+  $('.header-inner').toggleClass('header-open-menu')
+});
 $('.slideshow').scroll(function() {
   const ww = $(window).width();
   const ww3 = ww*3;
@@ -82,7 +87,7 @@ $('.slideshow').scroll(function(){
 $('.corona-button').on('click', function() {
       $('.cba').css('animation', 'cba 800ms ease 0s 1 normal both running');
       setTimeout(function() {
-
+      window.location.href = "http://www.kannojuku.com";
       }, 850);
 });
 $('.more-button').on('click',function(){
@@ -90,7 +95,4 @@ $('.more-button').on('click',function(){
   $('body').css({
     'background-color':'var(--kanno-main-color)',
     'transition':'2s'});
-});
-window.addEventListener('popstate', function(e) {
-alert('ブラウザバックを検知しました。');
 });
