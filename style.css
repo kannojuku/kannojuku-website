@@ -1,5 +1,5 @@
 :root {
-  --kanno-bg-color: #DBDCE680;
+  --kanno-bg-color: #EDEEF3;
   --kanno-text-color: #383A53;
   --kanno-main-color: #275CA6;
   --kanno-accent-color: #57B4CC
@@ -23,6 +23,7 @@ body {
   min-height: 100vh;
   background-color: #fff;
   max-width: 100vw;
+  padding-top: 110px;
 }
 ::-webkit-scrollbar {
   width: 0px;
@@ -43,6 +44,11 @@ header {
   display: flex;
   position: relative;
   z-index: 10;
+  box-shadow: 0 0 10px #545454;
+  transition: .4s;
+}
+.header-open-menu {
+  box-shadow: none;
 }
 .header-logo-container {
   flex-basis: calc(100% - 110px);
@@ -50,6 +56,10 @@ header {
 }
 .header-logo {
   height: 110px;
+  transition: .4s;
+}
+.header-open-menu .header-logo {
+  filter: blur(10px);
 }
 .header-menu {
   flex-basis: 110px;
@@ -74,6 +84,9 @@ header {
   right: 27px;
   top: calc((100% - 4px)/2);
   transition: .2s;
+}
+.menu-btn-open span {
+  background-color: #fff;
 }
 .menu-btn-open .menu_bar1 {
   transform: rotate(45deg);
@@ -101,13 +114,62 @@ menu {
   background-color: var(--kanno-main-color);
   height:100vh;
   width: 0;
-  transition: .2s;
+  transition: .3s;
   max-width: calc(100vw - 270px);
   margin: 0;
-  padding: 0;
+  padding: 110px 0 0;
+  overflow: hidden;
 }
 .menu-open {
   width: 65vw;
+}
+.menu-list {
+  width: 100%;
+  margin: 30px auto;
+  list-style: none;
+  padding: 0;
+  opacity: 0;
+  transition: .5s;
+}
+.menu-list li::after {
+  content:"";
+  display: inline-block;
+  position: relative;
+  right: 15px;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  border-right: solid 4px #fff;
+  border-top: solid 4px #fff;
+}
+.menu-open .menu-list {
+  opacity: 1;
+}
+.menu-item {
+  display: inline-block;
+  list-style: none;
+  color: #fff;
+  font-size: 1.4rem;
+  margin: 40px 0 0 8vw;
+  font-weight: 900;
+  border-bottom: solid 2px #fff;
+  padding: 0 20px 10px 0;
+  line-height: 45px;
+  width: calc(100% - (16vw + 10px));
+}
+.menu-back-blur {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 7;
+  transition: .4s;
+  pointer-events: none;
+}
+.menu-open + .menu-back-blur {
+  backdrop-filter: blur(10px);
+  pointer-events: auto;
 }
 .bdfb {
   backdrop-filter: blur(10px);
@@ -115,7 +177,6 @@ menu {
 main {
   width: 100%;
   height: auto;
-  margin-top: 110px;
 }
 .slideshow-image-container {
   flex: none;
