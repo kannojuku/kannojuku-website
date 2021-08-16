@@ -50,17 +50,28 @@ $('.slideshow, .scroll-button').on('touchend', function() {
         $('.slideshow').addClass('scroll-auto');
       }, 10000);
 });
-$(function(){
+$(function() {
   const ww = $(window).width();
   const ww3 = ww*3;
-  setInterval(function(){
-    let s= $('.slideshow').scrollLeft();
-    let s_after = s+ww;
-    if (s < ww3){
-      $('.scroll-auto').animate({scrollLeft: s_after},600,'swing',function(){$('.scroll-auto').addClass('scroll-snap-x')});
-    } else if ((s+10) >= ww3){
-      $('.scroll-auto').removeClass('scroll-snap-x');
-      $('.scroll-auto').animate({scrollLeft: 0 },800,'swing',function(){$('.scroll-auto').addClass('scroll-snap-x')});
+  setInterval(function() {
+    let s = $('.slideshow').scrollLeft();
+    let s_after = s + ww;
+    if (navigator.userAgent.includes('iPhone') == true) {
+      if (s < ww3) {
+        $('.scroll-auto').animate({ scrollLeft: s_after }, 600, 'swing');
+      } else if ((s + 10) >= ww3) {
+        $('.scroll-auto').animate({ scrollLeft: 0 },800,'swing');
+      };
+      console.log ('iPhone');
+    } else {
+      if (s < ww3) {
+        $('.scroll-auto').removeClass('scroll-snap-x');
+        $('.scroll-auto').animate({ scrollLeft: s_after }, 600, 'swing',function(){$('.scroll-auto').addClass('scroll-snap-x')});
+      } else if ((s + 10) >= ww3) {
+        $('.scroll-auto').removeClass('scroll-snap-x');
+        $('.scroll-auto').animate({ scrollLeft: 0 }, 800,'swing',function(){$('.scroll-auto').addClass('scroll-snap-x')});
+      };
+      console.log ('android');
     };
   }, 7000);
 });
