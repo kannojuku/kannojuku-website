@@ -57,7 +57,6 @@ $(function(){
     let s= $('.slideshow').scrollLeft();
     let s_after = s+ww;
     if (s < ww3){
-      $('.scroll-auto').removeClass('scroll-snap-x');
       $('.scroll-auto').animate({scrollLeft: s_after},600,'swing',function(){$('.scroll-auto').addClass('scroll-snap-x')});
     } else if ((s+10) >= ww3){
       $('.scroll-auto').removeClass('scroll-snap-x');
