@@ -2,6 +2,7 @@
   --kanno-bg-color: #EDEEF3;
   --kanno-text-color: #383A53;
   --kanno-main-color: #275CA6;
+  --kanno-main-color-alpha: #275ca6c0;
   --kanno-accent-color: #57B4CC
 }
 @font-face {
@@ -167,7 +168,7 @@ menu {
   transition: .4s;
   pointer-events: none;
 }
-.menu-open + .menu-back-blur {
+.menu-open-back-blur {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   pointer-events: auto;
@@ -248,8 +249,8 @@ main {
   border-radius: 3px 0 0 3px;
 }
 .scroll-button {
-  height: 70px;
-  width: 40px;
+  height: 100px;
+  width: 60px;
   transition: width .2s;
   pointer-events: auto;
 }
@@ -266,7 +267,7 @@ main {
   display: block;
   width: 14px;
   margin: auto;
-  height: 1px;
+  height: 2px;
   background-color: #fff;
   border-radius: 2px;
   transition: .2s;
@@ -781,4 +782,29 @@ footer {
   font-size: 1.2rem;
   line-height: 2rem;
   text-align: left;
+}
+.page-top-button {
+  position: fixed;
+  bottom: 5vw;
+  right: 5vw;
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  background-color: var(--kanno-main-color-alpha);
+  box-shadow: -3px -3px 7px #D6D8EE31, 5px 5px 10px #42445A6B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .4s;
+}
+.page-top-bar {
+  width: 20px;
+  height: 20px;
+  border-left: solid 2px #fff;
+  border-top: solid 2px #fff;
+  transform: translateY(5px) rotate(45deg);
+  
+}
+.ptb-hidden {
+  transform: translateY(calc(5vw + 110px));
 }
