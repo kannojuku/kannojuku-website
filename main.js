@@ -16,12 +16,12 @@ $(window).scroll(function() {
   };
   const scrollB = $('html').height() - $(window).height() - $(window).scrollTop();
   const wh = $(window).height();
-  const footerSpace = wh/100*15;
+  const footerSpace = wh/100*12;
   const buttonPosition = footerSpace-scrollB;
   if (buttonPosition >= wh/100*5) {
     $('.page-top-button').css('bottom', buttonPosition);
   } else {
-    $('.page-top-button').css('bottom', '5vw');
+    $('.page-top-button').css('bottom', wh/100*5);
   }
 });
 $('.slideshow').scroll(function() {
