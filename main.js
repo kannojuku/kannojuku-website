@@ -14,14 +14,15 @@ $(window).scroll(function() {
   } else {
     $('.page-top-button').addClass('ptb-hidden');
   };
-  const scrollB = $(document).height() - $(window).height() - $(window).scrollTop();
+  const scrollB = $('html').height() - $(window).height() - $(window).scrollTop();
   const wh = $(window).height();
-  const footerSpace = wh/100*5+150;
+  const footerSpace = wh/100*15;
   const buttonPosition = footerSpace-scrollB;
-  console.log(scrollB);
-  if (scrollB <= footerSpace) {
+  if (buttonPosition >= wh/100*5) {
     $('.page-top-button').css('bottom', buttonPosition);
-  };
+  } else {
+    $('.page-top-button').css('bottom', '5vw');
+  }
 });
 $('.slideshow').scroll(function() {
   const ww = $(window).width();
