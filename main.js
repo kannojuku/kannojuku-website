@@ -125,24 +125,26 @@ $('.slideshow').scroll(function(){
     $('*').removeClass('now-dot');
   };
 });
-$('.corona-button').on('click', function() {
-      $('.cba').css('animation', 'cba 800ms ease 0s 1 normal both running');
-      setTimeout(function() {
-      window.location.href = "http://www.kannojuku.com";
-      }, 850);
-});
-$('.more-button').on('click',function(){
-  $('body *').addClass('nmba');
-  $('body').css({
-    'background-color':'var(--kanno-main-color)',
-    'transition':'2s'});
-});
-$('.cbinsta').on('click',function(){
-  window.location.href = 'https://www.instagram.com/kanno_juku/';
-});
-$('.cbtel').on('click', function() {
-  window.location.href = 'tel:02023155294';
-});
-$('.cbtel').on('click', function() {
-  window.location.href = 'mailto:kannojuku2&#64;gmail.com';
+$(function() {
+  $('.corona-button').on('click', function() {
+        $('.cba').css('animation', 'cba 800ms ease 0s 1 normal both running');
+        setTimeout(function() {
+        window.location.href = "http://www.kannojuku.com";
+        }, 850);
+  });
+  $('.more-button').on('click',function(){
+    $('body *').addClass('nmba');
+    $('body').css({
+      'background-color':'var(--kanno-main-color)',
+      'transition':'2s'});
+  });
+  $('.cbinsta').on('click',function(){
+    window.location.href = 'https://www.instagram.com/kanno_juku/';
+  });
+  $('.cbtel').on('click', function() {
+    window.location.href = 'tel:02023155294';
+  });
+  $('.cbtel').on('click', function() {
+    window.location.href = 'mailto:kannojuku2&#64;gmail.com';
+  });
 });
