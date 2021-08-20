@@ -2,14 +2,19 @@ $('.header-btn-menu, .menu-back-blur').on('click', function() {
   $('.header-btn-menu').toggleClass('menu-btn-open');
   $('menu').toggleClass('menu-open');
   $('.header-inner').toggleClass('header-open-menu');
-  $('.menu-back-blur').toggleClass('menu-open-back-blur');
+  if (navigator.userAgent.includes('iPhone') == true) {
+    $('.menu-back-blur').toggleClass('menu-open-back-blur');
+    $('.header-logo').toggleClass('header-open-menu-logo')
+  } else {
+    $('.menu-back-blur').toggleClass('menu-open-back-alpha');
+  };
 });
 $('.page-top-button').on('click', function() {
   $('html').animate({scrollTop: 0}, 1000, 'swing');
 });
 $(window).scroll(function() {
   const scrollT = $(this).scrollTop();
-  if (scrollT >= 300) {
+  if (scrollT >= 150) {
     $('.page-top-button').removeClass('ptb-hidden');
   } else {
     $('.page-top-button').addClass('ptb-hidden');
@@ -74,12 +79,6 @@ $('.invite-button').on('click', function() {
 
       }, 1250);
 });
-$('.slideshow, .scroll-button').on('touchend', function() {
-      $('.slideshow').removeClass('scroll-auto');
-      setTimeout(function(){
-        $('.slideshow').addClass('scroll-auto');
-      }, 10000);
-});
 $(function() {
       const ww = $(window).width();
       const ww3 = ww * 3;
@@ -137,4 +136,13 @@ $('.more-button').on('click',function(){
   $('body').css({
     'background-color':'var(--kanno-main-color)',
     'transition':'2s'});
+});
+$('.cbinsta').on('click',function(){
+  window.location.href = 'https://www.instagram.com/kanno_juku/';
+});
+$('.cbtel').on('click', function() {
+  window.location.href = 'tel:02023155294';
+});
+$('.cbtel').on('click', function() {
+  window.location.href = 'mailto:kannojuku2&#64;gmail.com';
 });
