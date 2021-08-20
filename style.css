@@ -58,8 +58,9 @@ header {
 .header-logo {
   height: 110px;
   transition: .4s;
+  mix-blend-mode: darken;
 }
-.header-open-menu .header-logo {
+.header-open-menu-logo {
   filter: blur(10px);
 }
 .header-menu {
@@ -171,6 +172,10 @@ menu {
 .menu-open-back-blur {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  pointer-events: auto;
+}
+.menu-open-back-alpha {
+  background-color: #17171CB8;
   pointer-events: auto;
 }
 .bdfb {
@@ -715,7 +720,7 @@ main {
 .stwitter {
   background-image: url(../image/twilogo.png);
 }
-.section6 p {
+.share-section p {
   width: 300px;
   height: 50px;
   line-height: 50px;
@@ -727,7 +732,7 @@ main {
   letter-spacing: 3px;
   color: var(--kanno-text-color);
 }
-.section6 p::before {
+.share-section p::before {
   content: "";
   display: inline-block;
   position: relative;
@@ -738,7 +743,7 @@ main {
   border-radius: 2px;
   transform: translate(-20px,3px) rotate(-35deg);
 }
-.section6 p::after {
+.share-section p::after {
   content: "";
   display: inline-block;
   position: relative;
