@@ -5,14 +5,26 @@
   --kanno-main-color-alpha: #275ca6c0;
   --kanno-accent-color: #57B4CC
 }
+/*!
+ * "NotoSerifCJKjp-Regular" licensed under the SIL Open Font License
+ * https://www.google.com/get/noto/#serif-jpan
+ */
 @font-face {
   font-family: 'NotoSerifR';
   src: url(../font/NotoSerifCJKjp-Regular.otf);
 }
+/*!
+ * "NotoSansCJKjp-Regular" licensed under the SIL Open Font License
+ * https://www.google.com/get/noto/#sans-jpan
+ */
 @font-face {
   font-family: 'NotoSansR';
   src: url(../font/NotoSansCJKjp-Regular.otf);
 }
+/*!
+ * "源柔ゴシック" licensed under the SIL Open Font License
+ * http://jikasei.me/font/genjyuu/
+ */
 @font-face {
   font-family: '源柔ゴシック';
   src: url(../font/GenJyuuGothicX-Normal.ttf);
@@ -21,7 +33,6 @@
   font-family: NotoSansR;
 }
 body {
-  min-height: 100vh;
   background-color: #fff;
   max-width: 100vw;
   padding-top: 110px;
@@ -152,6 +163,7 @@ menu {
   list-style: none;
   color: #fff;
   font-size: 1.4rem;
+  font-family: "源柔ゴシック", sans-serif;
   margin: 40px 0 0 8vw;
   font-weight: 900;
   border-bottom: solid 2px #fff;
@@ -602,7 +614,6 @@ main {
   display: flex;
   align-items: center;
   border: solid 2px var(--kanno-main-color);
-  border-right-width: 20px;
 }
 .ibes {
   background-image: url(../image/ac-es.jpg);
@@ -694,7 +705,7 @@ main {
 .cb2 img {
   filter: saturate(0%) brightness(300%);
 }
-.section6 {
+.share-section {
   height: auto;
   margin-bottom: 100px;
 }
@@ -756,6 +767,7 @@ main {
 }
 footer {
   height: 10vh;
+  min-height: 200px;
   background-color: var(--kanno-bg-color);
   display: flex;
   overflow: scroll;
@@ -808,8 +820,40 @@ footer {
   border-left: solid 2px #fff;
   border-top: solid 2px #fff;
   transform: translateY(5px) rotate(45deg);
-  
 }
 .ptb-hidden {
   transform: translateY(calc(5vw + 200px));
+}
+.ats-title {
+  width: 92vw;
+  height: 250px;
+  margin: 0 4vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ats-title p {
+  margin: 0;
+  font-size: 3.2rem;
+  font-weight: bold;
+  color: var(--kanno-text-color);
+  padding: 0 15px 15px;
+  border-bottom: solid 2px var(--kanno-text-color);
+  font-family: "NotoSansR", sans-serif;
+}
+.ats-text {
+  width: 92vw;
+  margin: 10px 4vw 100px;
+}
+.ats-text p {
+  font-size: 2.4rem;
+  color: var(--kanno-text-color);
+  font-family: "源柔ゴシック", sans-serif;
+  margin: 0;
+}
+p.ats-text-line {
+  font-size: 1.8rem;
+  opacity: .6;
+  text-decoration: line-through;
+  margin-top: 20px;
 }
