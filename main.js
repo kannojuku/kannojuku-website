@@ -147,4 +147,7 @@ $(function() {
   $('.cbtel').on('click', function() {
     window.location.href = 'mailto:kannojuku2&#64;gmail.com';
   });
+  $('.mi-aboutsite').on('click', function() {
+    window.location.href = 'https://www.kannojuku.com/about-site.html';
+  });
 });
