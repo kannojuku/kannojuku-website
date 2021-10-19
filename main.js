@@ -148,6 +148,10 @@ $(function() {
     window.location.href = 'mailto:kannojuku2&#64;gmail.com';
   });
   $('.mi-aboutsite').on('click', function() {
-    window.location.href = 'https://www.kannojuku.com/about-site';
+    window.location.href = 'https://www.kannojuku.com/about-site.html';
+  });
+  $('.mi-top').on('click', function() {
+    window.location.href = 'https://www.kannojuku.com/';
+    console.log ('o')
   });
 });
